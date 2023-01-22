@@ -20,3 +20,38 @@ int jumpingOnClouds(vector<int> c, int k)
         
     return energy;
 }
+
+int main()
+{
+    ofstream fout(getenv("OUTPUT_PATH"));
+
+    string nk_temp;
+    getline(cin, nk_temp);
+
+    vector<string> nk = split_string(nk_temp);
+
+    int n = stoi(nk[0]);
+
+    int k = stoi(nk[1]);
+
+    string c_temp_temp;
+    getline(cin, c_temp_temp);
+
+    vector<string> c_temp = split_string(c_temp_temp);
+
+    vector<int> c(n);
+
+    for (int i = 0; i < n; i++) {
+        int c_item = stoi(c_temp[i]);
+
+        c[i] = c_item;
+    }
+
+    int result = jumpingOnClouds(c, k);
+
+    fout << result << "\n";
+
+    fout.close();
+
+    return 0;
+}
